@@ -20,12 +20,23 @@
         3. Open a terminal and enter this directory using "cd" command.
         4. Then run the following commands:
             a) To Build:
-                i) ./configure
-                ii) make 
+                i)  $ ./configure
+                ii) $ make 
             b) To verify whether built is proper or not
-                i) make check
+                i)  $ make check
             c) To install
-                i) sudo make install
+                i)  $ sudo make install
+
+    ### Paillier Library
+        Reference: https://acsc.cs.utexas.edu/libpaillier/#general
+        Steps to Install: 
+        1. Download "libpaillier-0.8.tar.gz" from https://acsc.cs.utexas.edu/libpaillier/#general
+        2. Extract the file. You will get a directory "libpaillier-0.8".
+        3. Open a terminal and enter this directory using "cd" command.
+        4. Then run the following commands:
+            $ ./configure
+            $ make
+            $ sudo make install 
 
 
 
