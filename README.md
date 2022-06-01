@@ -12,7 +12,7 @@
 
 ## Pre-requisite to run code:
 
-    ### GNU MP Library
+   ### GNU MP Library
         Reference: https://gmplib.org/manual/
         Steps to Install: (Ref.: https://gmplib.org/manual/Installing-GMP)
         1. Download "gmp-6.2.1.tar.lz" from https://gmplib.org/.
@@ -27,7 +27,7 @@
             c) To install
                 i)  $ sudo make install
 
-    ### Paillier Library
+   ### Paillier Library
         Reference: https://acsc.cs.utexas.edu/libpaillier/#general
         Steps to Install: 
         1. Download "libpaillier-0.8.tar.gz" from https://acsc.cs.utexas.edu/libpaillier/#general
