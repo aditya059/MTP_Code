@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <gmp.h>
-#define num_of_data_points 10
-#define num_of_features 5
+#define num_of_data_points 100000
+#define num_of_features 100
 #define c 2
 #define epsilon 2
 #define eta (num_of_features + 1 + c + epsilon)

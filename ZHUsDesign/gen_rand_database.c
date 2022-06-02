@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <gmp.h>
 
-#define num_of_data_points 10
-#define num_of_features 5
+#define num_of_data_points 100000
+#define num_of_features 100
 mpz_t DataBase[num_of_data_points][num_of_features];
 
 mpz_t maxRange;
