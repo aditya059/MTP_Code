@@ -76,7 +76,31 @@
             a. $ gcc DBEnc.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
             b. $ ./a.out
         v. Query encryption by QU and encryption by DO and again decryption by QU
-            a. $ gcc QueryEnc.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            a. $ gcc QueryEnc.c paillier.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp -lpaillier
+            b. $ ./a.out
+        vi. kNN computation by CS and result return
+            a. $ gcc kNNComp.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out
+
+        The final result (indices of k nearest neighbor in DB) is present in "TopK.txt" file
+
+## To run IBM's Design (Modification of Zhu's Work)
+    1. $ cd MTP_CODE
+    2. $ cd IBM_Work_On_Zhus_Paper
+    3. Run the following commands in this order:
+        i.  To generate random (synthetic) Database
+            a. $ gcc gen_rand_database.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out
+        ii. Generation of Keys by DO for encrypting database
+            a. $ gcc KeyGen.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out 
+        iii. Generate M inverse using python
+            a. python3 genInvM.py
+        iv. Encrypting DataBase by Data Owner
+            a. $ gcc DBEnc.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out
+        v. Query encryption by QU and encryption by DO and again decryption by QU
+            a. $ gcc QueryEnc.c paillier.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp -lpaillier
             b. $ ./a.out
         vi. kNN computation by CS and result return
             a. $ gcc kNNComp.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
@@ -95,4 +119,35 @@
     f. https://www.programiz.com/dsa/heap-sort
 
    ### Papers Reads for MTP:
-    a. https://www.sciencedirect.com/science/article/pii/S0743731515002105
+    a. “Secure and controllable k-NN query over encrypted cloud data with key confidentiality” 
+        (by Youwen Zhu, Zhiqiu Huang, Tsuyoshi Takagi; 2016)
+        https://www.sciencedirect.com/science/article/pii/S0743731515002105
+    b. “Secure k-NN as a Service over Encrypted Data in Multi-User Setting” 
+        (by Gagandeep Singh; Akshar Kaul; Sameep Mehta; 2018)
+        https://ieeexplore.ieee.org/document/8457795
+    c. "Privacy preserving k-nearest neighbor classification over encrypted database in outsourced cloud environments"
+        (By Wei Wu, Udaya Parampalli, Jian Liu, 2018)
+        https://link.springer.com/article/10.1007/s11280-018-0539-4
+    d. “Privacy-Preserving Multi-Keyword Ranked Search over Encrypted Cloud Data” 
+        (by Ning Cao, Cong Wang, Ming Li, Kui Ren, Wenjing Lou; 2014)
+        https://ieeexplore.ieee.org/document/6674958
+    e. “Revisiting Security Risks of Asymmetric Scalar Product Preserving Encryption and Its Variants” 
+        (by Weipeng Lin; Ke Wang; Zhilin Zhang; Hong Chen; 2017)
+        https://ieeexplore.ieee.org/document/7980052
+    f. “Practical Multi-keyword Ranked Search with Access Control over Encrypted Cloud Data” 
+        (by Jiayi Li; Jianfeng Ma; Yinbin Miao; Yang Ruikang; Ximeng Liu; Kim-Kwang Raymond Choo; 2020)
+        https://ieeexplore.ieee.org/document/9198140
+    g. “Shielding Applications from an Untrusted Cloud with Haven” 
+        (by Andrew Baumann, Marcus Peinado, and Galen Hunt; 2015)
+        https://dl.acm.org/doi/10.1145/2799647
+    h. “Use of Intel SGX to ensure the confidentiality of data of cloud users” 
+        (by D. P. Zegzhda, E. S. Usov, A. V. Nikol’skii. Yu. Pavlenko; 2017)
+        https://link.springer.com/article/10.3103/S0146411617080284
+    i. "Intel SGX Explained"
+        (by Victor Costan and Srinivas Devadas, 2016)
+        https://eprint.iacr.org/2016/086.pdf
+
+
+
+
+
