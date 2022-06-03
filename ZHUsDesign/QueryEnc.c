@@ -144,6 +144,7 @@ void decryptQueryByQU()
     for (int i = 0; i < eta; i++)
     {
         decrypted_query[i] = paillier_dec(NULL, PK, SK, Aq[i]);
+        gmp_fprintf(file, "%Zd ", decrypted_query[i]->m);
     }
     fclose(file);
     mpz_t gcd;
