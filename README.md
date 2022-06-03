@@ -40,16 +40,16 @@
 
 ## To test Paillier Encryption Timing Overhead
     1. $ cd MTP_CODE
-    2. $ cd Paillier Enc Time Measurement
+    2. $ cd PaillierEncTimeMeasurement
     3. $ Run the following command based on what to find:
         i.  To find Paillier Encryption Time on QU side (in C)
             a. Open the file "paillierQU.c" and set the value of d. 
-            b. $ gcc paillierQU.c paillier.c -o pal.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp -lpaillier
-            c. $ ./pal.out   
+            b. $ gcc paillierQU.c paillier.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp -lpaillier
+            c. $ ./a.out   
         ii. To find Paillier Decryption Time on QU side and Execution Time on DO (in C)
             a. Open the file "paillierDO.c" and set the value of d. 
-            b. $ gcc paillierDO.c paillier.c -o pal.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp -lpaillier
-            c. $ ./pal.out 
+            b. $ gcc paillierDO.c paillier.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp -lpaillier
+            c. $ ./a.out 
         iii.To find Paillier Encryption Time on QU side (in Python)
             a. Open the file "paillierQU.py" and set the value of d. 
             b. $ python3 paillierQU.py
@@ -60,6 +60,29 @@
    ### Google Sheet Link containing Paillier Encryption/Decryption Timing Overhead
        https://docs.google.com/spreadsheets/d/1u6Rli-x2XHccJYhr5Fbjk3tGbP--gAqFOm9xybhxE0E/edit#gid=0
 
+## To run Zhu's Design
+    1. $ cd MTP_CODE
+    2. $ cd ZHUsDesign
+    3. Run the following commands in this order:
+        i.  To generate random (synthetic) Database
+            a. $ gcc gen_rand_database.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out
+        ii. Generation of Keys by DO for encrypting database
+            a. $ gcc KeyGen.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out 
+        iii. Generate M inverse using python
+            a. python3 genInvM.py
+        iv. Encrypting DataBase by Data Owner
+            a. $ gcc DBEnc.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out
+        v. Query encryption by QU and encryption by DO and again decryption by QU
+            a. $ gcc QueryEnc.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out
+        vi. kNN computation by CS and result return
+            a. $ gcc kNNComp.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out
+
+        The final result (indices of k nearest neighbor in DB) is present in "TopK.txt" file
 
 ## Reference:
    ### Website Reference for coding:
