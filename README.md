@@ -69,6 +69,7 @@
     c. https://en.wikipedia.org/wiki/Paillier_cryptosystem
     d. https://www.geeksforgeeks.org/c-program-to-read-contents-of-whole-file/
     e. https://cse.iitkgp.ac.in/~goutam/cnt/reading/gmp-man-5.0.2.pdf
+    f. https://www.programiz.com/dsa/heap-sort
 
    ### Papers Reads for MTP:
     a. https://www.sciencedirect.com/science/article/pii/S0743731515002105
