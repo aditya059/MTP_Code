@@ -146,8 +146,3 @@
     i. "Intel SGX Explained"
         (by Victor Costan and Srinivas Devadas, 2016)
         https://eprint.iacr.org/2016/086.pdf
-
-
-
-
-
