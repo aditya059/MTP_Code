@@ -85,6 +85,8 @@ void genKeysByDO()
             gmp_fscanf(file, "%Zd ", M[i][j]);
         }
     }
+    file = fopen("BetaGeneratedByDO.txt", "w");
+    gmp_fprintf(file, "%Zd", betaQ);
     fclose(file);
 }
 
