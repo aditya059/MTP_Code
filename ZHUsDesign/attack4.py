@@ -2,7 +2,7 @@ from operator import matmul
 import numpy as np
 from numpy.linalg import inv
 
-num_of_features = 5
+num_of_features = 100
 
 M = np.loadtxt('M.txt', dtype='float')
 inv_M = inv(M)
