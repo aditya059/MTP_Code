@@ -141,6 +141,9 @@
         iii.Run Attack 3: "Extracting the complete DataBase in clear"
             a. $ python3 attack3.py
             b. The output of attack 3 (extracted DataBase) is in file "Calculated_DataBase_by_QU". It can be matched with "DataBase.txt" (Actual DataBase of Data Owner)
+        iv. Run Attack 4: "Obtaining the query in the clear"
+            a. $ python3 attack4.py
+            b. The output of attack 4 (extracted query) is printed on terminal. It can be matched with "queryByQU.txt" (Actual Query by QU)
 
 ## Reference:
    ### Website Reference for coding:
