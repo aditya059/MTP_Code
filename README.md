@@ -38,6 +38,18 @@
             $ make
             $ sudo make install 
 
+   ### PyCryptodome Library [For using AES in Python]
+        Reference: https://pycryptodome.readthedocs.io/en/latest/src/introduction.html
+        Steps to Install: https://pycryptodome.readthedocs.io/en/latest/src/installation.html
+        1. Open a terminal and run the following command:
+            a. sudo apt-get install build-essential python3-dev
+            b. pip install pycryptodome  
+            c. pip install pycryptodomex
+        2. To test everything is installed perfectly or not
+            a. pip install pycryptodome-test-vectors
+            b. python -m Crypto.SelfTest
+            c. python -m Cryptodome.SelfTest
+
 ## To test Paillier Encryption Timing Overhead
     1. $ cd MTP_CODE
     2. $ cd PaillierEncTimeMeasurement
