@@ -99,7 +99,7 @@
         iv. Encrypting DataBase by Data Owner
             a. $ gcc DBEnc.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
             b. $ ./a.out
-        v. Query encryption by QU and encryption by DO and again decryption by QU
+        v.  Query encryption by QU and encryption by DO and again decryption by QU
             a. $ gcc QueryEnc.c paillier.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp -lpaillier
             b. $ ./a.out
         vi. kNN computation by CS and result return
@@ -107,6 +107,37 @@
             b. $ ./a.out
 
         The final result (indices of k nearest neighbor in DB) is present in "TopK.txt" file
+
+## Attack on Zhu's Design
+    1. Follow steps 1 to 3 above (of "To run Zhu's Design"). 
+    2. Then follow the following steps in this order.
+        i.  Run Attack 1: "Obtaining the secret betaQ"
+            a. $ gcc attack1.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out
+            c. Output printed on terminal
+        ii. Run Attack 2: "Obtaining the secret M"
+            a. $ gcc attack2.c paillier.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp -lpaillier
+            b. $ ./a.out
+            c. The output of attack 2 (extracted M) is in file "calcMbyQU.txt". It can be matched with "M.txt" (Actual Matrix used by Data Owner)
+        iii.Run Attack 3: "Extracting the complete DataBase in clear"
+            a. $ python3 attack3.py
+            b. The output of attack 3 (extracted DataBase) is in file "Calculated_DataBase_by_QU". It can be matched with "DataBase.txt" (Actual DataBase of Data Owner)
+
+## Attack on IBM's Design
+    1. Follow steps 1 to 3 above (of "To run IBM's Design (Modification of Zhu's Work)"). 
+    2. Then follow the following steps in this order.
+        i.  Run Attack 1: "Trying to obtain the secret betaQ"  [Same code gave betaQ in Zhu's work but fails in IBM's work]
+            a. $ gcc attack1.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out
+            c. Output printed on terminal. [Incorrect Output as betaQ is not gcd of query points. Run attack 2 for obtaining betaQ]
+        ii. Run Attack 2: "Obtaining the secret betaQ and the secret M"
+            a. $ gcc attack2.c paillier.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp -lpaillier
+            b. $ ./a.out
+            c. The output of attack 2 (extracted M) is in file "calcMbyQU.txt". It can be matched with "M.txt" (Actual Matrix used by Data Owner)
+            d. betaQ is printed on terminal for each queries. Total eta ( = d + 1 + c + epsilon) queries are needed to obtain both betaQ and M
+        iii.Run Attack 3: "Extracting the complete DataBase in clear"
+            a. $ python3 attack3.py
+            b. The output of attack 3 (extracted DataBase) is in file "Calculated_DataBase_by_QU". It can be matched with "DataBase.txt" (Actual DataBase of Data Owner)
 
 ## Reference:
    ### Website Reference for coding:
