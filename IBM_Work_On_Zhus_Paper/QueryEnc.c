@@ -82,7 +82,7 @@ void genKeysByDO()
     {
         for (int j = 0; j < eta; j++)
         {
-            gmp_fscanf(file, "%Zd ", M[i][j]);
+            gmp_fscanf(file, "%Zd", M[i][j]);
         }
     }
     file = fopen("BetaGeneratedByDO.txt", "w");

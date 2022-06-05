@@ -33,7 +33,7 @@ void readEncryptedDB()
         for (int j = 0; j < eta; j++)
         {
             mpf_init(Encrypted_DB[i][j]);
-            gmp_fscanf(file, "%Ff ", Encrypted_DB[i][j]);
+            gmp_fscanf(file, "%Ff", Encrypted_DB[i][j]);
         }
     }
     fclose(file);
@@ -46,7 +46,7 @@ void readEncryptedQuery()
     for (int i = 0; i < eta; i++)
     {
         mpf_init(Encrypted_Query[i]);
-        gmp_fscanf(file, "%Ff ", Encrypted_Query[i]);
+        gmp_fscanf(file, "%Ff", Encrypted_Query[i]);
     }
     fclose(file);
 }

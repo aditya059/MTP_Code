@@ -30,7 +30,7 @@ void readDataBase()
     {
         for (int j = 0; j < num_of_features; j++)
         {
-            gmp_fscanf(file, "%Ff ", DataBase[i][j]);
+            gmp_fscanf(file, "%Ff", DataBase[i][j]);
         }
     }
     fclose(file);
@@ -45,7 +45,7 @@ void readMatrixInvM()
         for (int j = 0; j < eta; j++)
         {
             mpf_init(inv_matrix[i][j]);
-            gmp_fscanf(file, "%Ff ", inv_matrix[i][j]);
+            gmp_fscanf(file, "%Ff", inv_matrix[i][j]);
         }
     }
     fclose(file);
@@ -54,11 +54,11 @@ void readMatrixInvM()
 void readVectorS()
 {
     FILE *file;
-    file = fopen("InvM.txt", "r");
+    file = fopen("s.txt", "r");
     for (int i = 0; i <= num_of_features; i++)
     {
         mpf_init(s_vector[i]);
-        gmp_fscanf(file, "%Ff ", s_vector[i]);
+        gmp_fscanf(file, "%Ff", s_vector[i]);
     }
     fclose(file);
 }
@@ -66,11 +66,11 @@ void readVectorS()
 void readVectorTow()
 {
     FILE *file;
-    file = fopen("InvM.txt", "r");
+    file = fopen("tow.txt", "r");
     for (int i = 0; i < c; i++)
     {
         mpf_init(tow[i]);
-        gmp_fscanf(file, "%Ff ", tow[i]);
+        gmp_fscanf(file, "%Ff", tow[i]);
     }
     fclose(file);
 }
@@ -109,6 +109,21 @@ void modifyDataBase()
     mpf_clear(square);
     mpf_clear(temp);
     mpz_clear(random_int);
+}
+
+void writeModifiedDataBase()
+{
+    FILE *file;
+    file = fopen("ModifiedDataBase.txt", "w");
+    for (int i = 0; i < num_of_data_points; i++)
+    {
+        for (int j = 0; j < eta; j++)
+        {
+            gmp_fprintf(file, "%Ff ", DataBase[i][j]);
+        }
+        gmp_fprintf(file, "\n");
+    }
+    fclose(file);
 }
 
 void sendEncryptedDataBaseToCloud()
@@ -194,6 +209,7 @@ int main()
 
     // Modify DataBase
     modifyDataBase();
+    writeModifiedDataBase();
 
     // Permute DataBase
     // permuteDataBase();     TODO
