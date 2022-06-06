@@ -41,7 +41,7 @@
    ### PyCryptodome Library [For using AES in Python]
         Reference: https://pycryptodome.readthedocs.io/en/latest/src/introduction.html
         Steps to Install: https://pycryptodome.readthedocs.io/en/latest/src/installation.html
-        1. Open a terminal and run the following command:
+        1. Open a terminal and run the following commands:
             a. sudo apt-get install build-essential python3-dev
             b. pip install pycryptodome  
             c. pip install pycryptodomex
@@ -50,7 +50,16 @@
             b. python -m Crypto.SelfTest
             c. python -m Cryptodome.SelfTest
 
-## To test Paillier Encryption Timing Overhead
+   ### tiny-AES-c Library [For using AES in C]
+        Reference: https://github.com/kokke/tiny-AES-c
+        Steps to use: 
+        1. Open a terminal and change the directory where to download the library. 
+        2. Then run the following commands:
+            a. $ git clone "https://github.com/kokke/tiny-AES-c"
+            b. $ cd tiny-AES-c
+            c. $ make 
+
+## To test Paillier Encryption/Decryption Timing Overhead for d-sized query
     1. $ cd MTP_CODE
     2. $ cd PaillierEncTimeMeasurement
     3. $ Run the following command based on what to find:
@@ -69,7 +78,19 @@
             a. Open the file "paillierDO.py" and set the value of d. 
             b. $ python3 paillierDO.py 
 
-   ### Google Sheet Link containing Paillier Encryption/Decryption Timing Overhead
+## To test AES Encryption/Decryption Timing Overhead for d-sized query
+    1. $ cd MTP_CODE
+    2. $ cd AES_Enc_Decr_Time_Measurement
+    3. $ Run the following commands based on in which language to find:
+        i.  To find AES Encryption Time on QU side and AES Decryption Time on Enclave 1 side (in Python)
+            a. Open the file "AES_Encr_Decr_overhead.py" and set the value of d. 
+            b. $ python3 AES_Encr_Decr_overhead.py
+        ii. To find AES Encryption Time on QU side and AES Decryption Time on Enclave 1 side (in C)
+            a. Open the file "AES_Encr_Decr_overhead.c" and set the value of d.
+            b. $ gcc AES_Encr_Decr_overhead.c aes.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            c. $ ./a.out
+
+   ### Google Sheet Link containing Paillier Encryption/Decryption Timing Overhead and AES Encryption/Decryption Timing Overhead
        https://docs.google.com/spreadsheets/d/1u6Rli-x2XHccJYhr5Fbjk3tGbP--gAqFOm9xybhxE0E/edit#gid=0
 
 ## To run Zhu's Design
@@ -167,6 +188,9 @@
     e. https://cse.iitkgp.ac.in/~goutam/cnt/reading/gmp-man-5.0.2.pdf
     f. https://www.programiz.com/dsa/heap-sort
     g. https://discuss.python.org/t/converting-integer-to-byte-string-problem-in-python-3/5058
+    h. https://stackoverflow.com/questions/50254710/c-encrypt-and-decrypt-a-string-with-aes
+    i. https://www.includehelp.com/c/convert-ascii-string-to-byte-array-in-c.aspx
+    j. https://stackoverflow.com/questions/8257714/how-to-convert-an-int-to-string-in-c
 
    ### Papers Reads for MTP:
     a. “Secure and controllable k-NN query over encrypted cloud data with key confidentiality” 
