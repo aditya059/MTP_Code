@@ -166,6 +166,7 @@
     d. https://www.geeksforgeeks.org/c-program-to-read-contents-of-whole-file/
     e. https://cse.iitkgp.ac.in/~goutam/cnt/reading/gmp-man-5.0.2.pdf
     f. https://www.programiz.com/dsa/heap-sort
+    g. https://discuss.python.org/t/converting-integer-to-byte-string-problem-in-python-3/5058
 
    ### Papers Reads for MTP:
     a. “Secure and controllable k-NN query over encrypted cloud data with key confidentiality” 
