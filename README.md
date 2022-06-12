@@ -12,7 +12,7 @@
 
 ## Pre-requisite to run code:
 
-   ### GNU MP Library
+   ### GNU MP Library [Multiprecision Arithmetic Library for C/C++]
         Reference: https://gmplib.org/manual/
         Steps to Install: (Ref.: https://gmplib.org/manual/Installing-GMP)
         1. Download "gmp-6.2.1.tar.lz" from https://gmplib.org/.
@@ -27,7 +27,7 @@
             c) To install
                 i)  $ sudo make install
 
-   ### Paillier Library
+   ### Paillier Library [For C]
         Reference: https://acsc.cs.utexas.edu/libpaillier/#general
         Steps to Install: 
         1. Download "libpaillier-0.8.tar.gz" from https://acsc.cs.utexas.edu/libpaillier/#general
@@ -38,7 +38,12 @@
             $ make
             $ sudo make install 
 
-   ### PyCryptodome Library [For using AES in Python]
+   ### Paillier Library [For Python]
+        Reference: https://python-paillier.readthedocs.io/en/develop/
+        Steps to Install: https://python-paillier.readthedocs.io/en/develop/installation.html
+        1. pip install phe
+
+   ### PyCryptodome Library [AES Library for Python]
         Reference: https://pycryptodome.readthedocs.io/en/latest/src/introduction.html
         Steps to Install: https://pycryptodome.readthedocs.io/en/latest/src/installation.html
         1. Open a terminal and run the following commands:
@@ -50,7 +55,7 @@
             b. python -m Crypto.SelfTest
             c. python -m Cryptodome.SelfTest
 
-   ### tiny-AES-c Library [For using AES in C]
+   ### tiny-AES-c Library [AES library for C]
         Reference: https://github.com/kokke/tiny-AES-c
         Steps to use: 
         1. Open a terminal and change the directory where to download the library. 
@@ -58,6 +63,18 @@
             a. $ git clone "https://github.com/kokke/tiny-AES-c"
             b. $ cd tiny-AES-c
             c. $ make 
+
+   ### intel/sgx-gmp Library [Multiprecision Arithmetic Trusted Library for SGX]
+        References: https://github.com/intel/sgx-gmp
+        We may have to install "texinfo" (https://www.gnu.org/software/texinfo/) and "make" (https://ftp.gnu.org/gnu/make/) if not installed earlier
+        Steps to Install: https://github.com/intel/sgx-gmp/blob/github/INSTALL
+        1. $ git clone "https://github.com/intel/sgx-gmp"
+        2. $ cd sgx-gmp
+        3. $ sudo ./configure --enable-sgx --enable-static --disable-shared --enable-assembly
+        4. $ sudo ./sgx-configure
+        4. $ sudo make
+        5. $ sudo make install
+        6. $ sudo ./sgx-configure
 
 ## To test Paillier Encryption/Decryption Timing Overhead for d-sized query
     1. $ cd MTP_CODE
@@ -191,6 +208,8 @@
     h. https://stackoverflow.com/questions/50254710/c-encrypt-and-decrypt-a-string-with-aes
     i. https://www.includehelp.com/c/convert-ascii-string-to-byte-array-in-c.aspx
     j. https://stackoverflow.com/questions/8257714/how-to-convert-an-int-to-string-in-c
+    k. https://askubuntu.com/questions/27677/cannot-find-install-sh-install-sh-or-shtool-in-ac-aux
+    l. https://github.com/intel/sgx-gmp-demo
 
    ### Papers Reads for MTP:
     a. “Secure and controllable k-NN query over encrypted cloud data with key confidentiality” 
