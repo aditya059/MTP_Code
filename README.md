@@ -138,9 +138,9 @@
 
         The final result (indices of k nearest neighbor in DB) is present in "TopK.txt" file
 
-## To run IBM's Design (Modification of Zhu's Work)
+## To run Modified Zhu's Design (Modification of Zhu's Work) [Modification: Query modified such that beta_q is not common, i.e., beta_q is not multiplied with R_q of query]
     1. $ cd MTP_CODE
-    2. $ cd IBM_Work_On_Zhus_Paper
+    2. $ cd Modified_Zhus_Paper
     3. Run the following commands in this order:
         i.  To generate random (synthetic) Database
             a. $ gcc gen_rand_database.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
@@ -180,8 +180,8 @@
             a. $ python3 attack4.py
             b. The output of attack 4 (extracted query) is printed on terminal. It can be matched with "queryByQU.txt" (Actual Query by QU)
 
-## Attack on IBM's Design
-    1. Follow steps 1 to 3 above (of "To run IBM's Design (Modification of Zhu's Work)"). 
+## Attack on Modified Zhu's Design
+    1. Follow steps 1 to 3 above (of "To run Modified Zhu's Design (Modification of Zhu's Work)"). 
     2. Then follow the following steps in this order.
         i.  Run Attack 1: "Trying to obtain the secret betaQ"  [Same code gave betaQ in Zhu's work but fails in IBM's work]
             a. $ gcc attack1.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
