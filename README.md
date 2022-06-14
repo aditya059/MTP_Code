@@ -76,6 +76,10 @@
         5. $ sudo make install
         6. $ sudo ./sgx-configure
 
+   ### Intel SGX Installation Setup
+        Refer this doc: [Shared by Suraj and Rohan (TAs of CS741 (Spring 2021) course in IIT Bombay)]
+        https://docs.google.com/document/d/1lqDPNEk2pKePhnNfdsUBi0X1Zj-tL0Dti740ZC-XgGA/edit
+
 ## To test Paillier Encryption/Decryption Timing Overhead for d-sized query
     1. $ cd MTP_CODE
     2. $ cd PaillierEncTimeMeasurement
