@@ -81,7 +81,7 @@
         https://docs.google.com/document/d/1lqDPNEk2pKePhnNfdsUBi0X1Zj-tL0Dti740ZC-XgGA/edit
 
 ## To test Paillier Encryption/Decryption Timing Overhead for d-sized query
-    1. $ cd MTP_CODE
+    1. $ cd MTP_Code
     2. $ cd PaillierEncTimeMeasurement
     3. $ Run the following command based on what to find:
         i.  To find Paillier Encryption Time on QU side (in C)
@@ -100,7 +100,7 @@
             b. $ python3 paillierDO.py 
 
 ## To test AES Encryption/Decryption Timing Overhead for d-sized query
-    1. $ cd MTP_CODE
+    1. $ cd MTP_Code
     2. $ cd AES_Enc_Decr_Time_Measurement
     3. $ Run the following commands based on in which language to find:
         i.  To find AES Encryption Time on QU side and AES Decryption Time on Enclave 1 side (in Python)
@@ -115,7 +115,7 @@
        https://docs.google.com/spreadsheets/d/1u6Rli-x2XHccJYhr5Fbjk3tGbP--gAqFOm9xybhxE0E/edit#gid=0
 
 ## To run Zhu's Design
-    1. $ cd MTP_CODE
+    1. $ cd MTP_Code
     2. $ cd ZHUsDesign
     3. Run the following commands in this order:
         i.  To generate random (synthetic) Database
@@ -138,8 +138,8 @@
 
         The final result (indices of k nearest neighbor in DB) is present in "TopK.txt" file
 
-## To run Modified Zhu's Design (Modification of Zhu's Work) [Modification: Query modified such that beta_q is not common, i.e., beta_q is not multiplied with R_q of query]
-    1. $ cd MTP_CODE
+## To run Modified Zhu's Design [Modification: Query modified such that beta_q is not common, i.e., beta_q is not multiplied with R_q of query but multipled with everything else in query]
+    1. $ cd MTP_Code
     2. $ cd Modified_Zhus_Paper
     3. Run the following commands in this order:
         i.  To generate random (synthetic) Database
@@ -157,6 +157,32 @@
             a. $ gcc QueryEnc.c paillier.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp -lpaillier
             b. $ ./a.out
         vi. kNN computation by CS and result return
+            a. $ gcc kNNComp.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out
+
+        The final result (indices of k nearest neighbor in DB) is present in "TopK.txt" file
+
+## To run IBM's Design
+    1. $ cd MTP_Code
+    2. $ cd IBM_Work_On_Zhus_Paper
+    3. Run the following commands in this order:
+        i.  To generate random (synthetic) Database
+            a. $ gcc gen_rand_database.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out
+        ii. Generation of Keys by DO for encrypting database
+            a. $ gcc KeyGen.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out 
+        iii.Generate M inverse using python
+            a. python3 genInvM.py
+        iv. Generate W inverse using python
+            a. python3 genInvW.py
+        v.  Encrypting DataBase by Data Owner
+            a. $ gcc DBEnc.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out
+        vi. Query encryption by QU and encryption by DO and again decryption by QU
+            a. $ gcc QueryEnc.c paillier.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp -lpaillier
+            b. $ ./a.out
+        vii.kNN computation by CS and result return
             a. $ gcc kNNComp.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
             b. $ ./a.out
 
@@ -181,7 +207,7 @@
             b. The output of attack 4 (extracted query) is printed on terminal. It can be matched with "queryByQU.txt" (Actual Query by QU)
 
 ## Attack on Modified Zhu's Design
-    1. Follow steps 1 to 3 above (of "To run Modified Zhu's Design (Modification of Zhu's Work)"). 
+    1. Follow steps 1 to 3 above (of "To run Modified Zhu's Design"). 
     2. Then follow the following steps in this order.
         i.  Run Attack 1: "Trying to obtain the secret betaQ"  [Same code gave betaQ in Zhu's work but fails in IBM's work]
             a. $ gcc attack1.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
