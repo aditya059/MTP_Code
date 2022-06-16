@@ -215,6 +215,28 @@
 
         The final result (indices of k nearest neighbor in DB) is present in "TopK.txt" file
 
+## To run My_Design_2
+    1. $ cd MTP_Code
+    2. $ cd My_Design_2
+    3. Run the following commands in this order:
+        i.  To generate random (synthetic) Database
+            a. $ gcc gen_rand_database.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out
+        ii. Generation of Keys by DO for encrypting database
+            a. $ gcc KeyGen.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out 
+        iii.Encrypting DataBase by Data Owner
+            a. $ gcc DBEnc.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out
+        iv. Query encryption by QU and DO
+            a. $ gcc QueryEnc.c -o a.out -L/usr/local/lib/ -I/usr/local/include/ -lgmp
+            b. $ ./a.out
+        v.kNN computation by Enclave (at CS) and result return
+            a. $ sudo make
+            b. $ ./app
+
+        The final result (indices of k nearest neighbor in DB) is present in "TopK.txt" file
+
 ## Attack on Zhu's Design
     1. Follow steps 1 to 3 above (of "To run Zhu's Design"). 
     2. Then follow the following steps in this order.
