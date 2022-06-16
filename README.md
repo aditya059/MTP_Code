@@ -64,7 +64,8 @@
             b. $ cd tiny-AES-c
             c. $ make 
 
-   ### intel/sgx-gmp Library [Multiprecision Arithmetic Trusted Library for SGX]
+   ### intel/sgx-gmp Library [Multiprecision Arithmetic Trusted Library for SGX]     
+        // Was not working inside enclave but was working in untrusted app. No support for c++ (https://github.com/intel/sgx-gmp/issues/4). So didn't used finally.
         References: https://github.com/intel/sgx-gmp
         We may have to install "texinfo" (https://www.gnu.org/software/texinfo/) and "make" (https://ftp.gnu.org/gnu/make/) if not installed earlier
         Steps to Install: https://github.com/intel/sgx-gmp/blob/github/INSTALL
